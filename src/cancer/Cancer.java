@@ -111,10 +111,20 @@ public class Cancer {
             cancerCells ++;
         }
         //Checking if the cell if healthy
-        else if (grid[row][coloum].equals("+")){
-            //Setting up to search for more cancerous cells
-            start = 0;
-            cancerSearch(row,coloum);
+        else{
+            for(int i = 0; i < 15; i++){
+                row = i;
+                for(int k = 0; k < 15; k++){
+                    coloum = k; 
+                    
+                    if(grid[row][coloum].equals("-")){
+                        //Setting up to search for more cancerous cells
+                        start = 0;
+                        cancerSearch(row,coloum);
+                    }
+                }
+            }
+            
             
         }
                 
